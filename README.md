@@ -6,7 +6,7 @@ Develope a PHP information processing system that process a .CSV file containing
 - Name
 - Phone
 
-The system should have a page where you can download the file, click "process" and the page will display a list of all names and phones line by line, where each line
+The system should have a page where you can upload a file, click "process" and the page will display a list of all names and phones line by line, where each line
 will have its own unique color.
 
 [Online](https://immense-thicket-75227.herokuapp.com/)
