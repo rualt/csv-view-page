@@ -27,9 +27,6 @@
     </table>
 
 <?php   $users = json_decode(urldecode($_COOKIE['users']), true); ?>
-<?php  $users1 = ($_COOKIE)?>
-<?php   var_dump($users1) ?>
-<?php   var_dump($users) ?>
 <?php if(isset($users)) : ?>
     <table id="users">
     <th>Name</th>
