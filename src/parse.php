@@ -22,8 +22,7 @@ if($_FILES["file"]["size"] > 0) {
         ];
         }, $users, $colors);
 
-    $encodedUsers = rawurlencode(json_encode($mappedUsers));
-    setcookie('users', $encodedUsers, time()+3600, '/');
+    setcookie('users', json_encode($mappedUsers), time()+3600, '/');
     header("Location: /index.phtml?status=success");
 } else {
     header("Location: /index.html?status=empty");
