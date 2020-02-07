@@ -1,7 +1,7 @@
 <?php
 
 if ($_FILES["file"]["error"] > 0) {
-    //header("Location: /index.html?status=error");
+    header("Location: /index.phtml?status=error");
 }
 
 if($_FILES["file"]["size"] > 0) {
@@ -21,9 +21,10 @@ if($_FILES["file"]["size"] > 0) {
             'color' => $color
         ];
         }, $users, $colors);
-
-    setcookie('users', json_encode($mappedUsers), time()+3600, '/');
+    
+    file_put_contents(__DIR__ . "/../data/storage.json", json_encode($mappedUsers));
     header("Location: /index.phtml?status=success");
 } else {
-    header("Location: /index.html?status=empty");
+    file_put_contents(__DIR__ . "/../data/storage.json", "");
+    header("Location: /index.phtml?status=empty");
 }
