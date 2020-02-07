@@ -13,7 +13,7 @@
     <br>
     It'll display data on the current page.
     </p>
-    <table width="600">
+    <table>
         <form action="src/parse.php" method="post" enctype="multipart/form-data">
         <tr>
             <td width="20%">Select csv file</td>
@@ -26,11 +26,15 @@
         </form>
     </table>
 
-<?php   $users = json_decode(urldecode($_COOKIE['users']), true); ?>
+<?php if ($_GET['status'] == 'empty'): ?>
+            <?= "<p>Please select a csv file first</p>" ?>
+        <?php  elseif ($_GET['errors'] > 0): ?>
+            <?= "<p>Sorry, there was some error, please try again</p>" ?>
+<?php endif ?>
+
+<?php $users = json_decode(file_get_contents(__DIR__ . '/data/storage.json'), true); ?>
 <?php if(isset($users)) : ?>
     <table id="users">
-    <th>Name</th>
-    <th>Phone</th>
     <?php foreach ($users as $user) : ?>
         <tr style="background-color: <?= $user['color'] ?>">
             <td><?= $user['name'] ?></td>
