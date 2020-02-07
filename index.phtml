@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV-viewer</title>
+</head>
+<body>
+    <table width="600">
+        <form action="src/parse.php" method="post" enctype="multipart/form-data">
+        <tr>
+            <td width="20%">Select csv file</td>
+            <td width="80%"><input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="file" id="file" /></td>
+        </tr>
+        <tr>
+            <td>Submit</td>
+            <td><input type="submit" name="submit" value="Show data" /></td>
+        </tr>
+        </form>
+    </table>
+
+<?php   $users = json_decode(urldecode($_COOKIE['users']), true); ?>
+<?php  $users1 = ($_COOKIE)?>
+<?php   var_dump($users1) ?>
+<?php   var_dump($users) ?>
+<?php if(isset($users)) : ?>
+    <table id="users">
+    <th>Name</th>
+    <th>Phone</th>
+    <?php foreach ($users as $user) : ?>
+        <tr style="background-color: <?= $user['color'] ?>">
+            <td><?= $user['name'] ?></td>
+            <td><?= $user['phone'] ?></td>
+        </tr>
+    <?php endforeach ?>
+<table>
+<?php endif ?>
+</body>

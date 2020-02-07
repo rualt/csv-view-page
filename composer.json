@@ -1,0 +1,13 @@
+{
+    "name": "rualt/csv-view-page",
+    "description": "training project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rualt",
+            "email": "rualnar@gmail.com"
+        }
+    ],
+    "require": {}
+}
