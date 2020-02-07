@@ -1,6 +1,5 @@
 body {
     font-family: Georgia;
-    font-size: 17px;
     color: white;
     text-shadow: 1px 1px 1px black;
     margin: 0 auto;
@@ -9,6 +8,14 @@ body {
     padding-top: 32px;
     padding-bottom: 32px;
     background-color: rgb(27, 27, 27);
+}
+
+table {
+    padding:15px;
+}
+
+td {
+    padding: 10px;
 }
 
 #users tr td {
